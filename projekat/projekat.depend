@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1606442953 source:c:\users\user\desktop\haha\projekat\main.c
+	<stdio.h>
+	<stdlib.h>
+	"plaky.h"
+	<string.h>
+
+1606448622 c:\users\user\desktop\haha\projekat\plaky.h
+
+1606449081 source:c:\users\user\desktop\haha\projekat\funkcionalnost.c
+	<stdio.h>
+	<stdlib.h>
+	"plaky.h"
+	<string.h>
+

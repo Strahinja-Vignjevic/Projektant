@@ -2,10 +2,15 @@
 #include <stdlib.h>
 #include "plaky.h"
 #include <string.h>
+
 int main()
 {
     FILE* n= fopen("nalozi.txt","r+");
-    int i=0,j=0,k=0,l=0,m=0;
+    if(n==NULL){
+        printf("Nije moguce otvoriti fajl, molimo Vas pokusajte ponovo.");
+        return 1;
+    }
+    int i=0,j=0,k=0,l=0;
 ispisivanje:
     j=ispis(i);
     if (j < 1){
@@ -15,10 +20,9 @@ ispisivanje:
         printf("Nema te opcije!!!\n");
         goto ispisivanje;
     }
-    switch(i){
+    switch(j){
 case 1:
-    registracija(k);
-    k++;
+    registracija();
     goto ispisivanje;
     break;
 case 2:
@@ -26,7 +30,10 @@ case 2:
         printf("Vec ste ulogovani!!\n");
         goto ispisivanje;
     }
-    l=logovanje();
+    k=logovanje();
+    if(k>0){
+        l++;
+    }
     goto ispisivanje;
     break;
 case 3:
@@ -34,7 +41,7 @@ case 3:
         printf("Niste ulogovani uopste!!!");
         goto ispisivanje;
     }
-    izlogovanje(l,m);
+    l=izlogovanje(l);
     goto ispisivanje;
     break;
 case 4:
@@ -42,7 +49,7 @@ case 4:
         printf("Niste ulogovani uopste!!!");
         goto ispisivanje;
     }
-    menjanje_naloga(m);
+    menjanje_naloga(k);
     goto ispisivanje;
     break;
 case 5:
@@ -50,7 +57,7 @@ case 5:
         printf("Niste ulogovani uopste!!!");
         goto ispisivanje;
     }
-    brisanje_naloga(m);
+    brisanje_naloga(k);
     goto ispisivanje;
     break;
 case 6:
